@@ -26,6 +26,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+    /// Firebase Create Data With Generated ID & Capture it
+
+    $fb = new fireBase($fburl, $token);
+    $fbid = $fb -> push($firebasePath,$data);
+    $fbid = str_replace('{"name":"', '', $fbid);
+    $fbid = str_replace('"}', '', $fbid);
+    echo $fbid;
+
+////////////////////////////////////////////////////////////////////////////////
+
     /// Firebase Overwrite Data In Path
 
     $fb = new fireBase($fburl, $token);
